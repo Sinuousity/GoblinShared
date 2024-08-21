@@ -45,24 +45,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
-    <Compile Include="GoblinCustomisation.cs" />
-    <Compile Include="GoblinFace.cs" />
-    <Compile Include="GoblinMaterialProperties.cs" />
-    <Compile Include="GoblinDataBlob.cs" />
-    <Compile Include="GoblinCustomisationDefinition.cs" />
-    <Compile Include="GoblinInstanceData.cs" />
-    <Compile Include="GoblinProportions.cs" />
-    <Compile Include="GoblinShapeWeight.cs" />
-    <Compile Include="GoblinSkin.cs" />
-    <Compile Include="GoblinSlot.cs" />
-    <Compile Include="GoblinSlotData.cs" />
-    <Compile Include="GoblinSlotMeshData.cs" />
-    <Compile Include="GoblinSlotController.cs" />
-    <Compile Include="GoblinSlots.cs" />
-    <Compile Include="GoblinStyle.cs" />
-    <Compile Include="IGoblinController.cs" />
+    <Compile Include="src\Extensions\ColorExtensions.cs" />
+    <Compile Include="src\Extensions\TransformExtensions.cs" />
+    <Compile Include="src\Extensions\ObjectExtensions.cs" />
+    <Compile Include="src\Customisation\GoblinCustomisation.cs" />
+    <Compile Include="src\Customisation\Categories\GoblinFace.cs" />
+    <Compile Include="src\Data\GoblinMaterialProperties.cs" />
+    <Compile Include="src\Data\GoblinDataBlob.cs" />
+    <Compile Include="src\Customisation\ScriptableObjects\GoblinCustomisationDefinition.cs" />
+    <Compile Include="src\Data\GoblinInstanceData.cs" />
+    <Compile Include="src\Customisation\Categories\GoblinProportions.cs" />
+    <Compile Include="src\Customisation\GoblinShapeWeight.cs" />
+    <Compile Include="src\Customisation\Categories\GoblinSkin.cs" />
+    <Compile Include="src\Customisation\EquipSlots\GoblinSlot.cs" />
+    <Compile Include="src\Customisation\EquipSlots\GoblinSlotData.cs" />
+    <Compile Include="src\Customisation\EquipSlots\GoblinSlotMeshData.cs" />
+    <Compile Include="src\Customisation\EquipSlots\GoblinSlotController.cs" />
+    <Compile Include="src\Customisation\EquipSlots\GoblinSlots.cs" />
+    <Compile Include="src\Customisation\Categories\GoblinStyle.cs" />
+    <Compile Include="src\Interfaces\IGoblinController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

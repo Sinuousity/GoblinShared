@@ -5,14 +5,18 @@
 	public class GoblinCustomisation
 	{
 		/// <summary> Goblin face shape customisation. </summary>
-		public GoblinFace face = new GoblinFace(); // face blendshapes
+		public GoblinFace face = new GoblinFace();
+
 		/// <summary> Goblin body shape customisation. </summary>
-		public GoblinProportions proportions = new GoblinProportions(); // general body shape
+		public GoblinProportions proportions = new GoblinProportions();
+
 		/// <summary> Goblin skin and eye tone customisation. </summary>
-		public GoblinSkin skin = new GoblinSkin(); // colors / texture / material of skin
+		public GoblinSkin skin = new GoblinSkin();
+
 		/// <summary> Goblin walking and idle styles customisation. </summary>
-		public GoblinStyle style = new GoblinStyle(); // idle / walking styles
+		public GoblinStyle style = new GoblinStyle();
+
 		/// <summary> Goblin equipment and clothing customisation. </summary>
-		public GoblinSlots slots = new GoblinSlots(); // equipment
+		public GoblinSlots slots = new GoblinSlots();
 	}
 }

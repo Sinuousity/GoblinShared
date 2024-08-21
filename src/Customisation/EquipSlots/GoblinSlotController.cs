@@ -50,7 +50,7 @@
         }
 
         /// <summary> Updates the visibility for all slot MeshRenderers. </summary>
-        void RefreshSlotVisibility()
+        public void RefreshSlotVisibility()
         {
             if (hideSlotMeshes) DisableAll();
             else foreach (var slot in slots) slot.EnableIfSelected();

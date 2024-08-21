@@ -19,7 +19,7 @@
         /// <summary> Create a new Goblin Slot Controller for the specified IGoblinController. </summary>
         public GoblinSlotController(IGoblinController goblin)
         {
-            if (!goblin.bodyAnimator) throw new System.ArgumentException("Goblin not yet created!", "goblin");
+            if (!goblin.IsCreated) throw new System.ArgumentException("Goblin not yet created!", "goblin");
 
             var allSlots = goblin.customisationDefinition.customisation.slots.allSlots;
             slots = new GoblinSlotData[allSlots.Length];

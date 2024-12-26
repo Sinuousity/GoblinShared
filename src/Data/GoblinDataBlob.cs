@@ -1,25 +1,38 @@
-﻿namespace GoblinShared
+﻿using UnityEngine;
+
+namespace GoblinShared
 {
-	/// <summary>
-	/// This is the actual data container object that is stored remotely for each goblin.
-	/// Contains a viewer's platform-specific ID as well as their customisation data.
-	/// </summary>
 	[System.Serializable]
 	public class GoblinDataBlob
 	{
-		/// <summary> The viewer's platform-specific ID, typically 'platformName.platformUserId'. Default = string.Empty </summary>
-		public string id = string.Empty;
+		public string platform_user_id = string.Empty;
+		public string customisationJson = string.Empty;
+		public string statisticsJson = string.Empty;
 
-		/// <summary> The customisation data for this goblin. Default = null </summary>
-		public GoblinCustomisation customisation = null;
-
-		/// <summary> Create a new data container to hold a viewer's customisation data. </summary>
-		/// <param name="id">The viewer's platform-specific ID, typically 'platformName.platformUserId'</param>
-		/// <param name="customisation">The customisation data for this goblin</param>
-		public GoblinDataBlob(string id, GoblinCustomisation customisation)
+		public GoblinDataBlob(string platform_user_id)
 		{
-			this.id = id;
-			this.customisation = customisation;
+			this.platform_user_id = platform_user_id;
+			customisationJson = "{}";
+			statisticsJson = "{}";
+		}
+
+		public GoblinDataBlob(GoblinData data)
+		{
+			platform_user_id = data.platform_user_id;
+			customisationJson = data.customisation == null ? "{}" : JsonUtility.ToJson(data.customisation);
+			statisticsJson = data.statistics == null ? "{}" : JsonUtility.ToJson(data.statistics);
+		}
+
+		public GoblinCustomisation ParseCustomisation()
+		{
+			try { return JsonUtility.FromJson<GoblinCustomisation>(customisationJson); }
+			catch { return new GoblinCustomisation(); }
+		}
+
+		public GoblinStatistics ParseStatistics()
+		{
+			try { return JsonUtility.FromJson<GoblinStatistics>(statisticsJson); }
+			catch { return new GoblinStatistics(); }
 		}
 	}
 }

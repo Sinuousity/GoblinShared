@@ -22,6 +22,6 @@ namespace GoblinShared
 		/// Returns the integer size in bytes of a single GoblinInstanceData struct.
 		/// Used as the stride argument for the ComputeBuffer provided to instanced rendering.
 		/// </summary>
-		public static int ByteSize => sizeof(float) * 12;
+		public const int ByteSize = sizeof(float) * 12;
 	}
 }
